@@ -28,6 +28,6 @@ i=0
 for target in ${targets[@]}; do
   tmux split-window
   tmux select-layout tiled
-  tmux send-keys -t $i "cd $rootdir; KUBECONFIG=$(mktemp -d -t kubeconfig.XXX)/config; bin/tests --name $target ${bin}" ENTER
+  tmux send-keys -t $i "cd $rootdir; KUBECONFIG=$(mktemp -d -t kubeconfig.XXX)/config bin/tests --name $target ${bin}" ENTER
   ((i++))
 done
